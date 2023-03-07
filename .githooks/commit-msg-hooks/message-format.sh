@@ -15,7 +15,7 @@ ERROR_MSG="Commit messages must be formatted like TPxxxx or USxxxxx or #xxxxxx"
 
 branch=$(git symbolic-ref --short HEAD)
 
-if [[ $branch == "master" ]]; then
+if [[ $branch == "main" ]]; then
   if [[ $FILE_CONTENT =~ $COMMIT_MESSAGE_FORMAT ]]; then
 	  exit 0
   else
