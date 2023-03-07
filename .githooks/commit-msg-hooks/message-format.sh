@@ -15,14 +15,10 @@ ERROR_MSG="Commit messages must be formatted like USxxxxxx - some random message
 
 branch=$(git symbolic-ref --short HEAD)
 
-if [[ $branch == "main" ]]; then
-  if [[ $FILE_CONTENT =~ $COMMIT_MESSAGE_FORMAT ]]; then
-	  exit 0
-  else
-    echo "Bad commit message \"$FILE_CONTENT\""
-	  echo $ERROR_MSG
-    exit 1
-  fi
-  else
-    exit 0
+if [[ $FILE_CONTENT =~ $COMMIT_MESSAGE_FORMAT ]]; then
+  exit 0
+else
+echo "Bad commit message \"$FILE_CONTENT\""
+  echo $ERROR_MSG
+exit 1
 fi
