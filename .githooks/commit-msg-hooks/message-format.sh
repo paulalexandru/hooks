@@ -10,8 +10,8 @@ FILE_CONTENT="$(cat $MSG_FILE)"
 #         TP123456 - Relevant commit message.
 #         US123456 - Relevant commit message.
 
-COMMIT_MESSAGE_FORMAT='^((TP|#|US)[0-9]+).+$'
-ERROR_MSG="Commit messages must be formatted like TPxxxx or USxxxxx or #xxxxxx"
+COMMIT_MESSAGE_FORMAT='^(US[0-9]+)( - ).+$'
+ERROR_MSG="Commit messages must be formatted like USxxxxxx - some random message"
 
 branch=$(git symbolic-ref --short HEAD)
 
